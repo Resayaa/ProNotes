@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProNotes - Modern Not Defteri</title>
+  
+  <link rel="stylesheet" href="style.css">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="topbar-left">
+      <button id="menuToggle" class="icon-btn">☰</button>
+      <span class="logo">Pro<span class="logo-bold">Notes</span></span>
+    </div>
+    
+    <div class="search-wrapper">
+      <input type="text" id="searchInput" placeholder="Notlarında ara...">
+    </div>
+  </div>
+
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h3>Menü</h3>
+    </div>
+    
+    <button id="addNoteBtn">✨ Yeni Not Oluştur</button>
+    
+    <div class="sidebar-stats">
+      <p>Toplam Not: <span id="totalNotesCount">0</span></p>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+
+  <div class="container">
+    <div class="notes-area" id="notesList"></div>
+  </div>
+
+  <div class="modal" id="noteModal">
+    <div class="modal-content">
+      <h3 id="modalTitle">Yeni Not</h3>
+      
+      <form id="noteForm">
+        <input type="text" id="noteTitle" placeholder="Başlık yazın..." required>
+        
+        <textarea id="noteContent" placeholder="Notunuzu buraya bırakın..." required></textarea>
+        
+        <div class="color-picker-wrapper">
+          <label>Kart Rengi:</label>
+          <div class="color-options">
+            <label class="color-radio" style="background: #1e293b;" title="Varsayılan Tema">
+              <input type="radio" name="noteColor" value="#1e293b" checked>
+            </label>
+            
+            <label class="color-radio" style="background: #ff7675;"><input type="radio" name="noteColor" value="#ff7675"></label>
+            <label class="color-radio" style="background: #74b9ff;"><input type="radio" name="noteColor" value="#74b9ff"></label>
+            <label class="color-radio" style="background: #55efc4;"><input type="radio" name="noteColor" value="#55efc4"></label>
+            <label class="color-radio" style="background: #ffeaa7;"><input type="radio" name="noteColor" value="#ffeaa7"></label>
+            <label class="color-radio" style="background: #a29bfe;"><input type="radio" name="noteColor" value="#a29bfe"></label>
+          </div>
+        </div>
+
+        <div class="modal-buttons">
+          <button type="button" id="closeModal" class="close-btn">İptal</button>
+          <button type="submit" class="save-btn">Kaydet</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
